@@ -45,12 +45,12 @@ if prompt := st.chat_input(placeholder="Ask me anything about AI, ML, or LangCha
         st.warning("Please enter your Groq API Key to continue.")
         st.stop()
 
-    llm = ChatGroq(model="qwen/qwen3-32b", groq_api_key=api_key, streaming=True)
+    llm = ChatGroq(model="llama-3.1-8b-instant", groq_api_key=api_key, streaming=True)
     tools = [wiki, arxiv, search]
     agent = initialize_agent(
         tools,
         llm,
-        agent=AgentType.CONVERSATIONAL_REACT_DESCRIPTION,
+        agent=AgentType.ZERO_SHOT_REACT_DESCRIPTION,
         handle_parsing_errors=True,
     )
 
