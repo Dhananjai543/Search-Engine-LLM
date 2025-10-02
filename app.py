@@ -50,7 +50,7 @@ if prompt := st.chat_input(placeholder="Ask me anything about AI, ML, or LangCha
     agent = initialize_agent(
         tools,
         llm,
-        agent=AgentType.ONVERSATIONAL_REACT_DESCRIPTION,
+        agent=AgentType.CONVERSATIONAL_REACT_DESCRIPTION,
         handle_parsing_errors=True,
     )
 
